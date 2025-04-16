@@ -4,6 +4,7 @@ import com.myqueue.core.exceptions.QueueNotFoundException;
 
 public interface IQueueService {
 
-    void enqueue(String name, Message message) throws QueueNotFoundException;
+    void enqueue(String name, String message) throws QueueNotFoundException;
+    void enqueue(String name, byte[] content) throws QueueNotFoundException;
     Message dequeue(String name) throws QueueNotFoundException;
 }

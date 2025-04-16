@@ -7,10 +7,6 @@ public class Message {
     final static Message emptyMessage = new Message(new byte[0]);
     final byte[] content;
 
-    public Message(String content) {
-        this.content = content.getBytes(StandardCharsets.UTF_8);
-    }
-
     public Message(byte[] content) {
         this.content = content;
     }
