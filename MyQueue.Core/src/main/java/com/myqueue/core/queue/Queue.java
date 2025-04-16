@@ -1,5 +1,7 @@
 package com.myqueue.core.queue;
 
+import com.myqueue.core.Message;
+
 import java.util.LinkedList;
 
 public class Queue {

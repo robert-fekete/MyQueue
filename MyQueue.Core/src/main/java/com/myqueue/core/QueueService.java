@@ -2,7 +2,6 @@ package com.myqueue.core;
 
 import com.myqueue.core.configuration.QueueConfig;
 import com.myqueue.core.exceptions.QueueNotFoundException;
-import com.myqueue.core.queue.Message;
 import com.myqueue.core.queue.Queue;
 
 import java.util.HashMap;
