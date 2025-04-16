@@ -12,7 +12,7 @@ public class MessageDelivery {
     }
 
     public boolean exceedsMaxDeliveryAttempts(int maxDeliveryAttempts) {
-        return deliveryAttempts > maxDeliveryAttempts;
+        return deliveryAttempts >= maxDeliveryAttempts; // If we reached the max-th attempt we don't put it back on the queue
     }
 
     public void addDeliveryAttempts() {

@@ -30,20 +30,34 @@ class QueueService implements  IQueueService {
     @Override
     public void enqueue(String name, byte[] content) throws QueueNotFoundException {
 
-        if (!queues.containsKey(name)){
-            throw new QueueNotFoundException(String.format("Queue '%s' doesn't exist", name));
-        }
-
         final var message = messageFactory.create(content);
-        queues.get(name).enqueue(message);
+        getQueue(name).enqueue(message);
     }
 
     @Override
     public Message dequeue(String name) throws QueueNotFoundException {
+
+        return getQueue(name).dequeue();
+    }
+
+    @Override
+    public void commit(String name, long messageId) throws QueueNotFoundException {
+
+        getQueue(name).commit(messageId);
+    }
+
+    @Override
+    public void abort(String name, long messageId) throws QueueNotFoundException {
+
+        getQueue(name).abort(messageId);
+    }
+
+    private Queue getQueue(String name) throws QueueNotFoundException {
+
         if (!queues.containsKey(name)){
             throw new QueueNotFoundException(String.format("Queue '%s' doesn't exist", name));
         }
 
-        return queues.get(name).dequeue();
+        return queues.get(name);
     }
 }

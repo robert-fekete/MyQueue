@@ -38,6 +38,11 @@ public class Queue {
     }
 
     public void abort(long messageId){
+
+        if (!inFlightMessages.containsKey(messageId)){
+            return;
+        }
+
         final var delivery = inFlightMessages.get(messageId);
 
         if (delivery.exceedsMaxDeliveryAttempts(config.MAX_DELIVERY_ATTEMPTS)){
