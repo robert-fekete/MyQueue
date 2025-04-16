@@ -4,6 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Message {
 
+    final static Message emptyMessage = new Message(new byte[0]);
     final byte[] content;
 
     public Message(String content) {
@@ -12,6 +13,14 @@ public class Message {
 
     public Message(byte[] content) {
         this.content = content;
+    }
+
+    public static Message empty() {
+        return emptyMessage;
+    }
+
+    public boolean isEmpty() {
+        return content.length == 0;
     }
 
     public String getString() {

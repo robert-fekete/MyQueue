@@ -13,6 +13,10 @@ public class Queue {
     }
 
     public Message dequeue() {
+        if (queue.isEmpty()) {
+            return Message.empty();
+        }
+
         return queue.poll();
     }
 }
