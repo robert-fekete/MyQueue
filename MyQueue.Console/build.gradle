@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+}
+
+mainClassName = 'com.myqueue.console.Main' // Adjust this
+
+dependencies {
+    implementation project(':MyQueue.Core')
+}
