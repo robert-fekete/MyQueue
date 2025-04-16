@@ -4,8 +4,10 @@ import com.myqueue.core.Message;
 
 public class MessageFactory {
 
+    public long currentId = 1;
     public Message create(byte[] content) {
 
-        return new Message(content);
+        currentId++;
+        return new Message(currentId, content);
     }
 }
