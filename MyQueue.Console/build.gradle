@@ -2,7 +2,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'com.myqueue.console.Main' // Adjust this
+mainClassName = 'com.myqueue.console.Main'
 
 dependencies {
     implementation project(':MyQueue.Core')
