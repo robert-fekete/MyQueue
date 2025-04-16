@@ -6,10 +6,10 @@ import java.util.LinkedList;
 
 public class Queue {
 
-    private final java.util.Queue<Message> queue = new LinkedList<>();
+    private final java.util.Queue<MessageDelivery> queue = new LinkedList<>();
 
     public void enqueue(Message message) {
-        queue.add(message);
+        queue.add(new MessageDelivery(message));
     }
 
     public Message dequeue() {
@@ -17,6 +17,6 @@ public class Queue {
             return Message.empty();
         }
 
-        return queue.poll();
+        return queue.poll().getMessage();
     }
 }

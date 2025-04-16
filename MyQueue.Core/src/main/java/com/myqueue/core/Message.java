@@ -2,7 +2,7 @@ package com.myqueue.core;
 
 import java.nio.charset.StandardCharsets;
 
-public record Message(long id, byte[] content) {
+public record Message(long getId, byte[] content) {
 
     final static Message emptyMessage = new Message(0, new byte[0]);
 
