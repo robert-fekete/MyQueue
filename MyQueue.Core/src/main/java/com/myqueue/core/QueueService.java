@@ -17,7 +17,7 @@ class QueueService implements  IQueueService {
     public QueueService(QueueConfig config) {
 
         for(var name : config.getQueues()) {
-            queues.put(name, new Queue());
+            queues.put(name, new Queue(config));
         }
     }
 
