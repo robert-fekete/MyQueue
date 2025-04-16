@@ -2,6 +2,7 @@ package com.myqueue.core;
 
 import com.myqueue.core.configuration.QueueConfig;
 import com.myqueue.core.exceptions.QueueNotFoundException;
+import com.myqueue.core.logging.Logger;
 import com.myqueue.core.queue.MessageFactory;
 import com.myqueue.core.queue.Queue;
 
@@ -17,7 +18,7 @@ class QueueService implements  IQueueService {
     public QueueService(QueueConfig config) {
 
         for(var name : config.getQueues()) {
-            queues.put(name, new Queue(config));
+            queues.put(name, new Queue(config, new Logger()));
         }
     }
 
